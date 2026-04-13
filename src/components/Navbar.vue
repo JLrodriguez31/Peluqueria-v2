@@ -1,11 +1,11 @@
 <template>
   <header class="relative z-20 w-full px-6 pt-32 xl:pt-28 2xl:pt-20">
     <div
-      class="mx-auto flex w-full lg:px-16 xl:px-22 2xl:px-0 max-w-7xl items-center justify-between"
+      class="mx-auto flex w-full lg:px-16 xl:px-26 2xl:px-0 max-w-7xl items-center justify-between"
     >
       <a
         href="#home"
-        class="font-display text-4xl leading-none tracking-tight text-white sm:text-black transition-transform duration-300 hover:scale-[1.08]"
+        class="font-display text-4xl md:w-38 lg:w-auto leading-none tracking-tight text-white sm:text-black transition-transform duration-300 hover:scale-[1.08]"
       >
         Peluqueria Juan Carlos
         <sup class="align-super text-sm">&reg;</sup>
@@ -36,9 +36,9 @@
 <script setup lang="ts">
 const navItems = [
   { label: 'Inicio', href: '#home', active: false },
-  { label: 'Local', href: '#studio', active: false },
+  { label: 'Local', href: '#about', active: false },
   { label: 'Nosotros', href: '#about', active: false },
-  { label: 'Servicios', href: '#journal', active: false },
+  { label: 'Servicios', href: '#services', active: false },
   { label: 'Contactanos', href: '#reach-us', active: false },
 ]
 </script>

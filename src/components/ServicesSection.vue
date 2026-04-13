@@ -1,5 +1,5 @@
 <template>
-  <section id="studio" ref="sectionRef" class="bg-background px-6 py-32">
+  <section id="services" ref="sectionRef" class="bg-background px-6 py-32">
     <div class="mx-auto max-w-7xl">
       <div class="reveal">
         <span
@@ -70,8 +70,8 @@ const services = [
     number: '01',
     title: 'Corte de cabello',
     description:
-      'Cortes personalizados para adultos y niños, adaptados a tu estilo y tipo de cabello. Precisión, rapidez y un acabado limpio en cada sesión.',
-    tags: ['Corte', 'Estilo', 'Clásico', 'Moderno'],
+      'Cortes personalizados para adultos y niños, adaptados a tu estilo y tipo de cabello. Rapidez y un acabado limpio en cada sesión.',
+    tags: ['Corte', 'Clásico', 'Moderno'],
     price: 6,
   },
   {

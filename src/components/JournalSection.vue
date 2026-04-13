@@ -11,7 +11,7 @@
           <h2
             class="reveal reveal-stagger-1 mt-6 max-w-3xl font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl"
           >
-            Consejos de nuestro salon,
+            Consejos de nuestra peluqueria,
             <em class="text-muted not-italic"> para tu dia a dia.</em>
           </h2>
         </div>

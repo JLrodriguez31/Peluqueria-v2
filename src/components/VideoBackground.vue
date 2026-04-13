@@ -1,5 +1,5 @@
 <template>
-  <div class="pointer-events-none absolute inset-0 overflow-hidden">
+  <div id="home" class="pointer-events-none absolute inset-0 overflow-hidden">
     <div class="absolute inset-0" :style="{ opacity }">
       <video
         ref="videoRef"
@@ -17,8 +17,8 @@
         background-image:
           linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.12) 0%,
-            rgba(0, 0, 0, 0.28) 28%,
+            rgba(0, 0, 0, 0.22) 0%,
+            rgba(0, 0, 0, 0.38) 28%,
             rgba(0, 0, 0, 0.25) 100%
           ),
           radial-gradient(80% 55% at 50% 12%, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 70%),

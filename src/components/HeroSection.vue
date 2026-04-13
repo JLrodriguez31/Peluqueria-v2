@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="relative z-10 px-6 pb-40 pt-13.25">
+  <section class="relative z-10 px-6 pb-40 pt-13.25">
     <div class="mx-auto max-w-7xl text-center">
       <h1
         class="animate-fade-rise mx-auto max-w-xs md:max-w-7xl font-display text-4xl leading-[0.95] tracking-[-2.46px] text-white sm:text-6xl lg:text-7xl 2xl:text-8xl"
