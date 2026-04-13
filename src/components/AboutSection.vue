@@ -1,6 +1,11 @@
 <template>
-  <section id="about" ref="sectionRef" class="bg-background px-6 py-32">
-    <div class="mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-end">
+  <section id="about" ref="sectionRef" class="relative overflow-hidden bg-background px-6 py-32">
+    <div
+      aria-hidden="true"
+      class="pointer-events-none absolute inset-x-0 top-0 h-48 bg-linear-to-b from-black/85 via-black/30 to-transparent"
+    />
+
+    <div class="relative z-10 mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-end">
       <div class="reveal">
         <span
           class="inline-flex rounded-full border border-foreground/15 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"

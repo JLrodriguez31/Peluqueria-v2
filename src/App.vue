@@ -33,7 +33,6 @@ const handleIntroFinished = () => {
     <ServicesSection />
     <CaseStudiesSection />
     <ProcessSection />
-    <TestimonialsSection />
     <JournalSection />
     <ReachSection />
   </main>
