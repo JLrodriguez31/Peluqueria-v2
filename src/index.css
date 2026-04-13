@@ -1,0 +1,19 @@
+@config "../tailwind.config.js";
+@import './styles/fonts.css';
+@import './styles/theme.css';
+@import 'tailwindcss';
+
+html,
+body,
+#app {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fff;
+  color: #000;
+}
