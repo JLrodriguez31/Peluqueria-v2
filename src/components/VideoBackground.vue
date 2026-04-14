@@ -11,18 +11,19 @@
       />
     </div>
     <div
+      v-if="isIntroFinished"
       class="absolute inset-0"
       style="
         background-image:
           linear-gradient(
             to bottom,
-            rgba(0, 0, 0, 0.4) 0%,
-            rgba(0, 0, 0, 0.5) 28%,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.31) 28%,
             rgba(0, 0, 0, 0.25) 100%
           ),
-          radial-gradient(80% 55% at 50% 12%, rgba(0, 0, 0, 0.36) 0%, rgba(0, 0, 0, 0) 70%),
+          radial-gradient(80% 55% at 50% 12%, rgba(0, 0, 0, 0.46) 0%, rgba(0, 0, 0, 0) 70%),
           radial-gradient(70% 50% at 10% 78%, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 72%),
-          radial-gradient(70% 50% at 92% 74%, rgba(0, 0, 0, 0.34) 0%, rgba(0, 0, 0, 0) 72%),
+          radial-gradient(70% 50% at 92% 74%, rgba(0, 0, 0, 0.14) 0%, rgba(0, 0, 0, 0) 72%),
           linear-gradient(to top, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0) 42%);
       "
     />
@@ -69,13 +70,27 @@ const updateOpacity = () => {
 }
 
 const handleEnded = () => {
-  if (isIntroFinished.value) {
+  const video = videoRef.value
+  if (!video || isIntroFinished.value) {
     return
   }
 
-  isIntroFinished.value = true
-  opacity.value = 1
-  emit('intro-finished')
+  video.pause()
+
+  const handleSeeked = () => {
+    video.removeEventListener('seeked', handleSeeked)
+
+    if (isIntroFinished.value) {
+      return
+    }
+
+    isIntroFinished.value = true
+    opacity.value = 1
+    emit('intro-finished')
+  }
+
+  video.addEventListener('seeked', handleSeeked)
+  video.currentTime = 0
 
   if (rafId !== null) {
     cancelAnimationFrame(rafId)

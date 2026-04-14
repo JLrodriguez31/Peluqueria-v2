@@ -1,5 +1,5 @@
 <template>
-  <header class="relative z-20 w-full px-6 pt-28 sm:pt-38 xl:pt-30 2xl:pt-28">
+  <header class="relative z-20 w-full px-6 pt-28 sm:pt-38 xl:pt-30 2xl:pt-33">
     <div
       class="mx-auto flex w-full lg:px-16 xl:px-26 2xl:px-0 max-w-7xl items-center justify-between"
     >
