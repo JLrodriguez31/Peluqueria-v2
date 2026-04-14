@@ -11,11 +11,14 @@ import ReachSection from '@/components/ReachSection.vue'
 import ServicesSection from '@/components/ServicesSection.vue'
 import TestimonialsSection from '@/components/TestimonialsSection.vue'
 import VideoBackground from '@/components/VideoBackground.vue'
+import WhatsAppFloat from '@/components/WhatsAppFloat.vue'
 
 const showIntroContent = ref(false)
+const showWhatsApp = ref(false)
 
 const handleIntroFinished = () => {
   showIntroContent.value = true
+  showWhatsApp.value = true
 }
 </script>
 
@@ -36,5 +39,6 @@ const handleIntroFinished = () => {
     <ProcessSection />
     <CaseStudiesSection />
     <ReachSection />
+    <WhatsAppFloat :visible="showWhatsApp" />
   </main>
 </template>
