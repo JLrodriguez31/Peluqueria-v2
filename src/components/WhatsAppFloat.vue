@@ -26,7 +26,7 @@ defineProps<{
   visible: boolean
 }>()
 
-const rawNumber = (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) ?? '34600000000'
+const rawNumber = (import.meta.env.VITE_WHATSAPP_NUMBER as string | undefined) ?? '34678156436'
 const message =
   (import.meta.env.VITE_WHATSAPP_MESSAGE as string | undefined) ??
   'Hola, quiero informacion y reservar una cita.'

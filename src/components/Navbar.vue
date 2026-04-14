@@ -16,7 +16,7 @@
           v-for="item in navItems"
           :key="item.label"
           :href="item.href"
-          class="text-sm transition-colors duration-300"
+          class="text-md transition-colors duration-300"
           :class="item.active ? 'text-foreground' : 'text-white  hover:text-gray-300'"
         >
           {{ item.label }}
