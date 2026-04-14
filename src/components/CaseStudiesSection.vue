@@ -1,10 +1,10 @@
 <template>
-  <section ref="sectionRef" class="bg-white px-6 py-32 text-foreground">
+  <section ref="sectionRef" class="bg-black px-6 py-32 text-white">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <span
-            class="reveal inline-flex rounded-full border border-foreground/15 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
+            class="reveal inline-flex rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
           >
             Trabajo seleccionado
           </span>

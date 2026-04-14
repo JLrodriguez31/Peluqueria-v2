@@ -1,5 +1,5 @@
 <template>
-  <section id="local" ref="sectionRef" class="bg-foreground px-6 py-32 text-white">
+  <section id="local" ref="sectionRef" class="bg-black px-6 py-32 text-black">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
@@ -9,14 +9,14 @@
             Nuestro local
           </span>
           <h2
-            class="reveal reveal-stagger-1 mt-6 font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl"
+            class="reveal reveal-stagger-1 mt-6 font-display text-white text-4xl leading-[1.05] sm:text-5xl md:text-6xl"
           >
             Conoce el espacio donde cuidamos cada detalle
           </h2>
         </div>
         <a
           href="#reach-us"
-          class="reveal reveal-stagger-2 text-sm uppercase tracking-[0.18em] text-muted"
+          class="reveal reveal-stagger-2 text-sm uppercase tracking-[0.18em] text-white/50"
         >
           Agenda tu visita
         </a>

@@ -1,9 +1,11 @@
 <template>
-  <section id="services" ref="sectionRef" class="bg-background px-6 py-32">
+  <section id="services" ref="sectionRef" class="bg-black relative px-6 py-32">
+    <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
+    <div class="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
     <div class="mx-auto max-w-7xl">
       <div class="reveal">
         <span
-          class="inline-flex rounded-full border border-foreground/15 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
+          class="inline-flex rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
         >
           Servicios
         </span>
@@ -11,7 +13,7 @@
 
       <div class="mt-8 flex flex-col gap-8 md:flex-row md:items-end">
         <h2
-          class="reveal reveal-stagger-1 max-w-2xl font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl"
+          class="reveal reveal-stagger-1 max-w-2xl font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl"
         >
           Servicios profesionales
           <em class="text-muted not-italic">para tu mejor versión</em>
@@ -30,7 +32,7 @@
           :class="`reveal-stagger-${Math.min(index + 1, 6)}`"
         >
           <p class="text-sm text-muted md:col-span-1">{{ service.number }}</p>
-          <h3 class="font-display text-3xl text-foreground md:col-span-3 md:text-4xl">
+          <h3 class="font-display text-3xl text-white md:col-span-3 md:text-4xl">
             {{ service.title }}
           </h3>
           <p class="text-base leading-relaxed text-muted md:col-span-5">
@@ -41,14 +43,14 @@
               <span
                 v-for="tag in service.tags"
                 :key="tag"
-                class="rounded-full bg-foreground/5 px-3 py-1 text-xs text-muted"
+                class="rounded-full bg-white/10 px-3 py-1 text-xs text-white/75"
               >
                 {{ tag }}
               </span>
             </div>
             <button
               type="button"
-              class="flex h-10 w-10 items-center justify-center rounded-full border border-foreground/10 text-foreground transition-colors duration-300 group-hover:bg-foreground group-hover:text-white"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black text-white transition-colors duration-300 group-hover:bg-white group-hover:text-black"
               aria-label="Ver servicio"
             >
               {{ service.price }}€

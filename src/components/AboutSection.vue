@@ -1,20 +1,13 @@
 <template>
-  <section id="about" ref="sectionRef" class="relative overflow-hidden bg-background px-6 py-32">
-    <div
-      aria-hidden="true"
-      class="pointer-events-none absolute inset-x-0 top-0 h-32 bg-linear-to-b from-black/95 via-black/50 to-transparent"
-    />
-
+  <section id="about" ref="sectionRef" class="relative overflow-hidden bg-black px-6 py-32">
     <div class="relative z-10 mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-end">
       <div class="reveal">
         <span
-          class="inline-flex rounded-full border border-foreground/15 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
+          class="inline-flex rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
         >
           Sobre nosotros
         </span>
-        <h2
-          class="mt-6 font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl"
-        >
+        <h2 class="mt-6 font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl">
           Pensado para quienes valoran la calidad,
           <em class="text-muted not-italic"> el detalle y la confianza.</em>
         </h2>

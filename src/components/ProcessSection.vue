@@ -1,9 +1,9 @@
 <template>
-  <section ref="sectionRef" class="bg-background px-6 py-32">
+  <section ref="sectionRef" class="bg-black px-6 py-32">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <h2
-          class="reveal max-w-3xl font-display text-4xl leading-[1.05] text-foreground sm:text-5xl md:text-6xl"
+          class="reveal max-w-3xl font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl"
         >
           Nuestro metodo combina
           <em class="text-muted not-italic">tecnica y estilo.</em>
@@ -18,11 +18,11 @@
         <article
           v-for="(step, index) in steps"
           :key="step.title"
-          class="reveal rounded-2xl border border-foreground/10 p-7"
+          class="reveal rounded-2xl border border-white/20 p-7"
           :class="`reveal-stagger-${Math.min(index + 1, 6)}`"
         >
           <p class="text-xs uppercase tracking-[0.22em] text-muted">{{ step.number }}</p>
-          <h3 class="mt-4 font-display text-3xl text-foreground">{{ step.title }}</h3>
+          <h3 class="mt-4 font-display text-3xl text-white">{{ step.title }}</h3>
           <p class="mt-3 text-sm leading-relaxed text-muted">{{ step.description }}</p>
         </article>
       </div>

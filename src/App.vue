@@ -32,12 +32,11 @@ const handleIntroFinished = () => {
       <Navbar v-if="showIntroContent" />
       <HeroSection v-if="showIntroContent" />
     </div>
-
-    <AboutSection />
-    <ServicesSection />
     <LocalSection />
-    <ProcessSection />
+    <ServicesSection />
     <CaseStudiesSection />
+    <AboutSection />
+    <ProcessSection />
     <ReachSection />
     <WhatsAppFloat :visible="showWhatsApp" />
   </main>
