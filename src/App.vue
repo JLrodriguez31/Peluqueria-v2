@@ -4,6 +4,7 @@ import AboutSection from '@/components/AboutSection.vue'
 import CaseStudiesSection from '@/components/CaseStudiesSection.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import JournalSection from '@/components/JournalSection.vue'
+import LocalSection from '@/components/LocalSection.vue'
 import Navbar from '@/components/Navbar.vue'
 import ProcessSection from '@/components/ProcessSection.vue'
 import ReachSection from '@/components/ReachSection.vue'
@@ -31,9 +32,9 @@ const handleIntroFinished = () => {
 
     <AboutSection />
     <ServicesSection />
-    <CaseStudiesSection />
+    <LocalSection />
     <ProcessSection />
-    <JournalSection />
+    <CaseStudiesSection />
     <ReachSection />
   </main>
 </template>

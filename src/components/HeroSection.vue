@@ -1,16 +1,16 @@
 <template>
-  <section class="relative z-10 px-6 pb-40 pt-13.25">
+  <section class="relative z-10 px-6 pb-40 pt-24">
     <div class="mx-auto max-w-7xl text-center">
       <h1
-        class="animate-fade-rise mx-auto max-w-xs md:max-w-7xl font-display text-4xl leading-[0.95] tracking-[-2.46px] text-white sm:text-6xl lg:text-7xl 2xl:text-8xl"
+        class="animate-fade-rise mx-auto max-w-md md:max-w-7xl font-display text-4xl leading-[0.95] tracking-normal lg:tracking-[-2.46px] text-white sm:text-6xl lg:text-7xl 2xl:text-8xl"
       >
-        <em class="sm:text-black text-white not-italic">Más</em>
+        <em class="text-black not-italic">Más</em>
         allá del estilo, creamos
-        <em class="sm:text-black text-white not-italic">tu esencia.</em>
+        <em class="text-black not-italic">tu esencia.</em>
       </h1>
 
       <p
-        class="animate-fade-rise-delay mx-auto mt-10 max-w-xl xl:max-w-2xl text-base text-white sm:text-lg"
+        class="animate-fade-rise-delay mx-auto mt-12 max-w-xl xl:max-w-2xl text-base text-white sm:text-lg"
       >
         Corte, color y estilo pensados para resaltar lo mejor de ti. Tu imagen también comunica.
       </p>
