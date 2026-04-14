@@ -70,27 +70,13 @@ const updateOpacity = () => {
 }
 
 const handleEnded = () => {
-  const video = videoRef.value
-  if (!video || isIntroFinished.value) {
+  if (isIntroFinished.value) {
     return
   }
 
-  video.pause()
-
-  const handleSeeked = () => {
-    video.removeEventListener('seeked', handleSeeked)
-
-    if (isIntroFinished.value) {
-      return
-    }
-
-    isIntroFinished.value = true
-    opacity.value = 1
-    emit('intro-finished')
-  }
-
-  video.addEventListener('seeked', handleSeeked)
-  video.currentTime = 0
+  isIntroFinished.value = true
+  opacity.value = 1
+  emit('intro-finished')
 
   if (rafId !== null) {
     cancelAnimationFrame(rafId)
