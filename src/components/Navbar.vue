@@ -1,11 +1,11 @@
 <template>
-  <header class="relative z-20 w-full px-6 pt-28 sm:pt-38 xl:pt-30 2xl:pt-33">
+  <header class="relative z-20 w-full px-6 pt-32 sm:pt-38 xl:pt-30 2xl:pt-33">
     <div
       class="mx-auto flex w-full lg:px-16 xl:px-26 2xl:px-0 max-w-7xl items-center justify-between"
     >
       <a
         href="#home"
-        class="font-display text-4xl md:w-38 lg:w-auto leading-none tracking-tight text-white sm:text-black transition-transform duration-300 hover:scale-[1.08]"
+        class="font-display text-4xl md:w-38 xl:w-auto leading-none tracking-tight text-white sm:text-black transition-transform duration-300 hover:scale-[1.08]"
       >
         Peluqueria Juan Carlos
         <sup class="align-super text-sm">&reg;</sup>

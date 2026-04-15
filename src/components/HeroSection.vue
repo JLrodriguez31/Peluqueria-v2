@@ -4,9 +4,9 @@
       <h1
         class="animate-fade-rise mx-auto max-w-md md:max-w-7xl font-display text-4xl leading-[0.95] tracking-normal lg:tracking-[-2.46px] text-white sm:text-6xl lg:text-7xl 2xl:text-8xl"
       >
-        <em class="text-gray-400 not-italic">Más</em>
+        <em class="text-black not-italic">Más</em>
         allá del estilo, creamos
-        <em class="text-gray-400 not-italic">tu esencia.</em>
+        <em class="text-black not-italic">tu esencia.</em>
       </h1>
 
       <p
