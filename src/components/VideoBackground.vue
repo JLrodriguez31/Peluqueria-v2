@@ -1,24 +1,26 @@
 <template>
   <div id="home" class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div class="absolute inset-0">
+    <div class="absolute inset-0" :style="{ opacity }">
       <video
         ref="introVideoRef"
-        class="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
-        :src="introVideoSrc"
-        :style="{ opacity: introOpacity }"
+        class="h-full w-full object-cover object-center"
+        :src="bgvideo"
         muted
         playsinline
         autoplay
+        preload="auto"
       />
+    </div>
+    <div class="absolute inset-0" :style="{ opacity: isIntroFinished ? 1 : 0 }">
       <video
         ref="loopVideoRef"
-        class="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
-        :src="loopVideoSrc"
-        :style="{ opacity: loopOpacity }"
+        class="h-full w-full object-cover object-center"
+        :src="seedance2"
         muted
         playsinline
-        preload="auto"
+        autoplay
         loop
+        preload="auto"
       />
     </div>
     <div
@@ -50,20 +52,15 @@ const emit = defineEmits<{
   (event: 'intro-finished'): void
 }>()
 
-const FADE_DURATION = 0.5
-
-const introVideoSrc = bgvideo
-const loopVideoSrc = seedance2
-
+const FADE_DURATION = 1
 const introVideoRef = ref<HTMLVideoElement | null>(null)
 const loopVideoRef = ref<HTMLVideoElement | null>(null)
-const introOpacity = ref(0)
-const loopOpacity = ref(0)
+const opacity = ref(0)
 const isIntroFinished = ref(false)
 
 let rafId: number | null = null
 
-const updateIntroOpacity = () => {
+const updateOpacity = () => {
   const video = introVideoRef.value
   if (!video) {
     return
@@ -73,59 +70,62 @@ const updateIntroOpacity = () => {
   const currentTime = video.currentTime
 
   if (!Number.isFinite(duration) || duration <= 0) {
-    introOpacity.value = 0
+    opacity.value = 0
   } else if (currentTime < FADE_DURATION) {
-    introOpacity.value = currentTime / FADE_DURATION
+    opacity.value = currentTime / FADE_DURATION
+  } else if (duration - currentTime < FADE_DURATION) {
+    opacity.value = Math.max((duration - currentTime) / FADE_DURATION, 0)
   } else {
-    introOpacity.value = 1
+    opacity.value = 1
   }
 
-  rafId = requestAnimationFrame(updateIntroOpacity)
+  rafId = requestAnimationFrame(updateOpacity)
 }
 
-const handleEnded = async () => {
-  const loopVideo = loopVideoRef.value
-  if (!loopVideo || isIntroFinished.value) {
+const handleEnded = () => {
+  const introVideo = introVideoRef.value
+  if (!introVideo || isIntroFinished.value) {
     return
   }
 
+  const loopVideo = loopVideoRef.value
+  if (loopVideo) {
+    loopVideo.currentTime = 0
+    void loopVideo.play().catch(() => {
+      // Ignore autoplay rejections; user interaction can resume playback.
+    })
+  }
+
   isIntroFinished.value = true
+  opacity.value = 1
   emit('intro-finished')
 
   if (rafId !== null) {
     cancelAnimationFrame(rafId)
     rafId = null
   }
-
-  loopVideo.currentTime = 0
-  try {
-    await loopVideo.play()
-  } catch {
-    // Ignore autoplay rejections; user interaction can resume playback.
-  }
-
-  loopOpacity.value = 1
-  introOpacity.value = 0
 }
 
 onMounted(() => {
-  const introVideo = introVideoRef.value
-  const loopVideo = loopVideoRef.value
-  if (!introVideo) {
+  const video = introVideoRef.value
+  if (!video) {
     return
   }
 
-  introVideo.addEventListener('ended', handleEnded)
-  rafId = requestAnimationFrame(updateIntroOpacity)
+  video.addEventListener('ended', handleEnded)
 
-  // Force preload of the second video so switching does not flash black in production.
-  loopVideo?.load()
+  const loopVideo = loopVideoRef.value
+  if (loopVideo) {
+    loopVideo.load()
+  }
+
+  rafId = requestAnimationFrame(updateOpacity)
 })
 
 onUnmounted(() => {
-  const introVideo = introVideoRef.value
-  if (introVideo) {
-    introVideo.removeEventListener('ended', handleEnded)
+  const video = introVideoRef.value
+  if (video) {
+    video.removeEventListener('ended', handleEnded)
   }
 
   if (rafId !== null) {
