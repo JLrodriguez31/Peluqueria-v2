@@ -31,15 +31,17 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue'
+import { nextTick, onMounted, onUnmounted, ref } from 'vue'
 import bgvideo from '@/assets/bgveo4s.mp4'
+import seedance2 from '@/assets/afterbg.mp4'
 
 const emit = defineEmits<{
   (event: 'intro-finished'): void
 }>()
 
 const FADE_DURATION = 0.5
-const videoSrc = bgvideo
+
+const videoSrc = ref(bgvideo)
 
 const videoRef = ref<HTMLVideoElement | null>(null)
 const opacity = ref(0)
@@ -75,27 +77,31 @@ const handleEnded = () => {
     return
   }
 
-  video.pause()
+  isIntroFinished.value = true
+  opacity.value = 1
+  emit('intro-finished')
 
-  const handleSeeked = () => {
-    video.removeEventListener('seeked', handleSeeked)
-
-    if (isIntroFinished.value) {
-      return
-    }
-
-    isIntroFinished.value = true
-    opacity.value = 1
-    emit('intro-finished')
-  }
-
-  video.addEventListener('seeked', handleSeeked)
-  video.currentTime = 0
+  videoSrc.value = seedance2
 
   if (rafId !== null) {
     cancelAnimationFrame(rafId)
     rafId = null
   }
+
+  nextTick(async () => {
+    const nextVideo = videoRef.value
+    if (!nextVideo) {
+      return
+    }
+
+    nextVideo.loop = true
+    nextVideo.currentTime = 0
+    try {
+      await nextVideo.play()
+    } catch {
+      // Ignore autoplay rejections; user interaction can resume playback.
+    }
+  })
 }
 
 onMounted(() => {
