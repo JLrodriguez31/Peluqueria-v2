@@ -17,7 +17,7 @@ const showIntroContent = ref(false)
 const showWhatsApp = ref(false)
 const isXlViewport = ref(false)
 
-const XL_BREAKPOINT = 1023
+const XL_BREAKPOINT = 1280
 
 const syncViewport = () => {
   isXlViewport.value = window.innerWidth >= XL_BREAKPOINT
@@ -50,7 +50,7 @@ onBeforeUnmount(() => {
       <Navbar v-if="showIntroContent" />
       <HeroSection v-if="showIntroContent" />
     </div>
-    <LocalSection class="snap-section xl:flex xl:flex-col xl:items-center xl:h-screen" />
+    <LocalSection class="snap-section xl:flex xl:flex-col xl:items-center xl:h-screen 2xl:block" />
     <ServicesSection class="snap-section h-screen flex items-center" />
     <CaseStudiesSection class="snap-section h-screen flex items-center" />
     <template v-if="isXlViewport">
@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
         <ProcessSection />
       </section>
     </template>
-    <template class="h-screen" v-else>
+    <template v-else>
       <AboutSection class="snap-section" />
       <ProcessSection class="snap-section" />
     </template>
