@@ -1,5 +1,5 @@
 <template>
-  <section ref="sectionRef" class="bg-black px-6 py-32 text-white">
+  <section ref="sectionRef" class="bg-black px-6 2xl:py-30 py-22 text-white">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>

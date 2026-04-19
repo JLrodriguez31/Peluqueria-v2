@@ -1,5 +1,9 @@
 <template>
-  <section id="about" ref="sectionRef" class="relative overflow-hidden bg-black px-6 py-32">
+  <section
+    id="about"
+    ref="sectionRef"
+    class="relative overflow-hidden bg-black px-6 2xl:py-32 py-10 pb-20"
+  >
     <div class="relative z-10 mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-end">
       <div class="reveal">
         <span

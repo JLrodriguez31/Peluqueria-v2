@@ -1,5 +1,5 @@
 <template>
-  <section id="local" ref="sectionRef" class="bg-black px-6 py-32 text-black">
+  <section id="local" ref="sectionRef" class="bg-black px-6 2xl:py-32 py-22 text-black">
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>

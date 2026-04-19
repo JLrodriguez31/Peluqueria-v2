@@ -1,5 +1,5 @@
 <template>
-  <section id="services" ref="sectionRef" class="bg-black relative px-6 py-32">
+  <section id="services" ref="sectionRef" class="bg-black relative px-6 2xl:py-28 py-18">
     <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
     <div class="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
     <div class="mx-auto max-w-7xl">
