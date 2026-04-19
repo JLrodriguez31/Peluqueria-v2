@@ -1,13 +1,24 @@
 <template>
   <div id="home" class="pointer-events-none absolute inset-0 overflow-hidden">
-    <div class="absolute inset-0" :style="{ opacity }">
+    <div class="absolute inset-0">
       <video
-        ref="videoRef"
-        class="h-full w-full object-cover object-center"
-        :src="videoSrc"
+        ref="introVideoRef"
+        class="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
+        :src="introVideoSrc"
+        :style="{ opacity: introOpacity }"
         muted
         playsinline
         autoplay
+      />
+      <video
+        ref="loopVideoRef"
+        class="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
+        :src="loopVideoSrc"
+        :style="{ opacity: loopOpacity }"
+        muted
+        playsinline
+        preload="auto"
+        loop
       />
     </div>
     <div
@@ -31,7 +42,7 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, ref } from 'vue'
 import bgvideo from '@/assets/bgveo4s.mp4'
 import seedance2 from '@/assets/afterbg.mp4'
 
@@ -41,16 +52,19 @@ const emit = defineEmits<{
 
 const FADE_DURATION = 0.5
 
-const videoSrc = ref(bgvideo)
+const introVideoSrc = bgvideo
+const loopVideoSrc = seedance2
 
-const videoRef = ref<HTMLVideoElement | null>(null)
-const opacity = ref(0)
+const introVideoRef = ref<HTMLVideoElement | null>(null)
+const loopVideoRef = ref<HTMLVideoElement | null>(null)
+const introOpacity = ref(0)
+const loopOpacity = ref(0)
 const isIntroFinished = ref(false)
 
 let rafId: number | null = null
 
-const updateOpacity = () => {
-  const video = videoRef.value
+const updateIntroOpacity = () => {
+  const video = introVideoRef.value
   if (!video) {
     return
   }
@@ -59,65 +73,59 @@ const updateOpacity = () => {
   const currentTime = video.currentTime
 
   if (!Number.isFinite(duration) || duration <= 0) {
-    opacity.value = 0
+    introOpacity.value = 0
   } else if (currentTime < FADE_DURATION) {
-    opacity.value = currentTime / FADE_DURATION
-  } else if (duration - currentTime < FADE_DURATION) {
-    opacity.value = Math.max((duration - currentTime) / FADE_DURATION, 0)
+    introOpacity.value = currentTime / FADE_DURATION
   } else {
-    opacity.value = 1
+    introOpacity.value = 1
   }
 
-  rafId = requestAnimationFrame(updateOpacity)
+  rafId = requestAnimationFrame(updateIntroOpacity)
 }
 
-const handleEnded = () => {
-  const video = videoRef.value
-  if (!video || isIntroFinished.value) {
+const handleEnded = async () => {
+  const loopVideo = loopVideoRef.value
+  if (!loopVideo || isIntroFinished.value) {
     return
   }
 
   isIntroFinished.value = true
-  opacity.value = 1
   emit('intro-finished')
-
-  videoSrc.value = seedance2
 
   if (rafId !== null) {
     cancelAnimationFrame(rafId)
     rafId = null
   }
 
-  nextTick(async () => {
-    const nextVideo = videoRef.value
-    if (!nextVideo) {
-      return
-    }
+  loopVideo.currentTime = 0
+  try {
+    await loopVideo.play()
+  } catch {
+    // Ignore autoplay rejections; user interaction can resume playback.
+  }
 
-    nextVideo.loop = true
-    nextVideo.currentTime = 0
-    try {
-      await nextVideo.play()
-    } catch {
-      // Ignore autoplay rejections; user interaction can resume playback.
-    }
-  })
+  loopOpacity.value = 1
+  introOpacity.value = 0
 }
 
 onMounted(() => {
-  const video = videoRef.value
-  if (!video) {
+  const introVideo = introVideoRef.value
+  const loopVideo = loopVideoRef.value
+  if (!introVideo) {
     return
   }
 
-  video.addEventListener('ended', handleEnded)
-  rafId = requestAnimationFrame(updateOpacity)
+  introVideo.addEventListener('ended', handleEnded)
+  rafId = requestAnimationFrame(updateIntroOpacity)
+
+  // Force preload of the second video so switching does not flash black in production.
+  loopVideo?.load()
 })
 
 onUnmounted(() => {
-  const video = videoRef.value
-  if (video) {
-    video.removeEventListener('ended', handleEnded)
+  const introVideo = introVideoRef.value
+  if (introVideo) {
+    introVideo.removeEventListener('ended', handleEnded)
   }
 
   if (rafId !== null) {
