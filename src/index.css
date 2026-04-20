@@ -3,6 +3,13 @@
 @import './styles/theme.css';
 @import 'tailwindcss';
 
+:root {
+  --scrollbar-track: #0b0b0d;
+  --scrollbar-thumb: #2a2a2f;
+  --scrollbar-thumb-hover: #3a3a42;
+  --scrollbar-corner: #0b0b0d;
+}
+
 html,
 body,
 #app {
@@ -24,9 +31,34 @@ body {
   overflow-y: auto;
   overscroll-behavior-y: contain;
   scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
-@media (min-width: 1280px) {
+.snap-container::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.snap-container::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
+}
+
+.snap-container::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 999px;
+  border: 3px solid var(--scrollbar-track);
+}
+
+.snap-container::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover);
+}
+
+.snap-container::-webkit-scrollbar-corner {
+  background: var(--scrollbar-corner);
+}
+
+@media (min-width: 1024px) {
   .snap-container {
     scroll-snap-type: y mandatory;
   }

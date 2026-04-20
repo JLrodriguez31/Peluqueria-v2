@@ -1,5 +1,8 @@
 <template>
-  <section ref="sectionRef" class="bg-black px-6 2xl:py-30 py-22 text-white">
+  <section
+    ref="sectionRef"
+    class="bg-black px-6 py-28 lg:py-0 lg:h-screen lg:flex lg:items-center text-white"
+  >
     <div class="mx-auto max-w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
@@ -9,7 +12,7 @@
             Trabajo seleccionado
           </span>
           <h2
-            class="reveal reveal-stagger-1 mt-6 font-display text-4xl leading-[1.05] sm:text-5xl md:text-6xl"
+            class="reveal reveal-stagger-1 mt-6 font-display text-4xl leading-[1.05] sm:text-5xl xl:text-6xl"
           >
             Descubre cómo transformamos estilos
           </h2>

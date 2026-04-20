@@ -2,7 +2,7 @@
   <section
     id="reach-us"
     ref="sectionRef"
-    class="relative overflow-hidden bg-foreground px-6 py-32 text-white"
+    class="relative overflow-hidden py-28 lg:py-0 bg-foreground px-6 text-white lg:h-screen lg:flex lg:items-center"
   >
     <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
     <div class="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />

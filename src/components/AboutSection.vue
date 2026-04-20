@@ -2,7 +2,7 @@
   <section
     id="about"
     ref="sectionRef"
-    class="relative overflow-hidden bg-black px-6 2xl:py-32 py-10 pb-20"
+    class="pt-28 lg:pt-0 relative overflow-hidden bg-black px-6 pb-20"
   >
     <div class="relative z-10 mx-auto grid max-w-7xl gap-16 md:grid-cols-2 md:items-end">
       <div class="reveal">
@@ -11,7 +11,9 @@
         >
           Sobre nosotros
         </span>
-        <h2 class="mt-6 font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl">
+        <h2
+          class="mt-6 font-display text-4xl leading-[1.05] text-white sm:text-5xl lg:text-5xl xl:text-6xl"
+        >
           Pensado para quienes valoran la calidad,
           <em class="text-muted not-italic"> el detalle y la confianza.</em>
         </h2>

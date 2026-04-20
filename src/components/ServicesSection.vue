@@ -1,5 +1,9 @@
 <template>
-  <section id="services" ref="sectionRef" class="bg-black relative px-6 2xl:py-28 py-18">
+  <section
+    id="services"
+    ref="sectionRef"
+    class="bg-black relative py-28 lg:py-0 lg:h-screen lg:flex lg:items-center px-6"
+  >
     <div class="absolute -left-24 top-10 h-72 w-72 rounded-full bg-white/10 blur-3xl" />
     <div class="absolute -right-16 bottom-0 h-72 w-72 rounded-full bg-white/5 blur-3xl" />
     <div class="mx-auto max-w-7xl">
@@ -13,7 +17,7 @@
 
       <div class="mt-8 flex flex-col gap-8 md:flex-row md:items-end">
         <h2
-          class="reveal reveal-stagger-1 max-w-2xl font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl"
+          class="reveal reveal-stagger-1 max-w-2xl font-display text-4xl leading-[1.05] text-white sm:text-5xl xl:text-6xl"
         >
           Servicios profesionales
           <em class="text-muted not-italic">para tu mejor versión</em>

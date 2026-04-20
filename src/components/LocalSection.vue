@@ -1,6 +1,10 @@
 <template>
-  <section id="local" ref="sectionRef" class="bg-black px-6 2xl:py-32 py-22 text-black">
-    <div class="mx-auto max-w-7xl">
+  <section
+    id="local"
+    ref="sectionRef"
+    class="bg-black py-28 lg:py-0 lg:h-screen lg:flex lg:items-center px-6 text-black"
+  >
+    <div class="mx-auto max-w-7xl xl:w-7xl">
       <div class="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
         <div>
           <span
@@ -9,7 +13,7 @@
             Nuestro local
           </span>
           <h2
-            class="reveal reveal-stagger-1 mt-6 font-display text-white text-4xl leading-[1.05] sm:text-5xl md:text-6xl"
+            class="reveal reveal-stagger-1 mt-6 font-display text-white text-4xl leading-[1.05] sm:text-5xl xl:text-6xl lg:text-5xl"
           >
             Conoce el espacio donde cuidamos cada detalle
           </h2>
@@ -22,11 +26,11 @@
         </a>
       </div>
 
-      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div class="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
         <article
           v-for="(item, index) in videos"
           :key="item.name"
-          class="group reveal mx-auto w-full max-w-88 overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/3"
+          class="group reveal mx-auto w-full xl:max-w-96 max-w-82 overflow-hidden rounded-2xl border border-foreground/10 bg-foreground/3"
           :class="`reveal-stagger-${Math.min(index + 2, 6)}`"
         >
           <div class="relative aspect-3/4">
@@ -34,7 +38,7 @@
               class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
               :src="item.video"
               muted
-              loop
+              loopss
               playsinline
               autoplay
             />

@@ -1,9 +1,9 @@
 <template>
-  <section ref="sectionRef" class="bg-black px-6 pb-26 xl:pb-4 2xl:py-26">
+  <section ref="sectionRef" class="bg-black px-6 pb-28 lg:pb-0">
     <div class="mx-auto max-w-7xl">
       <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
         <h2
-          class="reveal max-w-3xl font-display text-4xl leading-[1.05] text-white sm:text-5xl md:text-6xl"
+          class="reveal max-w-3xl font-display text-4xl leading-[1.05] text-white lg:text-5xl sm:text-5xl xl:text-6xl"
         >
           Nuestro metodo combina
           <em class="text-muted not-italic">tecnica y estilo.</em>

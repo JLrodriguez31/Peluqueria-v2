@@ -3,13 +3,11 @@ import { onBeforeUnmount, onMounted, ref } from 'vue'
 import AboutSection from '@/components/AboutSection.vue'
 import CaseStudiesSection from '@/components/CaseStudiesSection.vue'
 import HeroSection from '@/components/HeroSection.vue'
-import JournalSection from '@/components/JournalSection.vue'
 import LocalSection from '@/components/LocalSection.vue'
 import Navbar from '@/components/Navbar.vue'
 import ProcessSection from '@/components/ProcessSection.vue'
 import ReachSection from '@/components/ReachSection.vue'
 import ServicesSection from '@/components/ServicesSection.vue'
-import TestimonialsSection from '@/components/TestimonialsSection.vue'
 import VideoBackground from '@/components/VideoBackground.vue'
 import WhatsAppFloat from '@/components/WhatsAppFloat.vue'
 
@@ -17,7 +15,7 @@ const showIntroContent = ref(false)
 const showWhatsApp = ref(false)
 const isXlViewport = ref(false)
 
-const XL_BREAKPOINT = 1280
+const XL_BREAKPOINT = 1000
 
 const syncViewport = () => {
   isXlViewport.value = window.innerWidth >= XL_BREAKPOINT
@@ -50,20 +48,20 @@ onBeforeUnmount(() => {
       <Navbar v-if="showIntroContent" />
       <HeroSection v-if="showIntroContent" />
     </div>
-    <LocalSection class="snap-section xl:flex xl:flex-col xl:items-center xl:h-screen 2xl:block" />
-    <ServicesSection class="snap-section h-screen flex items-center" />
-    <CaseStudiesSection class="snap-section h-screen flex items-center" />
+    <LocalSection class="snap-section" />
+    <ServicesSection class="snap-section" />
+    <CaseStudiesSection class="snap-section" />
     <template v-if="isXlViewport">
-      <section class="snap-section flex h-screen flex-col">
-        <AboutSection class="snap-section" />
-        <ProcessSection />
+      <section class="snap-section flex h-screen flex-col justify-center bg-black">
+        <AboutSection class="pb-0!" />
+        <ProcessSection class="pt-10" />
       </section>
     </template>
     <template v-else>
       <AboutSection class="snap-section" />
       <ProcessSection class="snap-section" />
     </template>
-    <ReachSection class="snap-section h-screen flex items-center" />
+    <ReachSection class="snap-section" />
     <WhatsAppFloat :visible="showWhatsApp" />
   </main>
 </template>
