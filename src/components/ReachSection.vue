@@ -12,7 +12,7 @@
         <span
           class="inline-flex rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-white/60"
         >
-          Contactanos
+          Contáctanos
         </span>
         <h2 class="mt-6 font-display text-4xl leading-[1.02] sm:text-5xl md:text-7xl">
           Listo para renovar
@@ -21,7 +21,7 @@
         <p
           class="reveal reveal-stagger-2 mx-auto mt-6 max-w-2xl text-base text-white/70 sm:text-lg"
         >
-          Escribenos o llamanos y te ayudamos a elegir el servicio ideal para ti. Rapido, cercano y
+          Escríbenos o llámanos y te ayudamos a elegir el servicio ideal para ti. Rápido, cercano y
           con resultados profesionales.
         </p>
         <div

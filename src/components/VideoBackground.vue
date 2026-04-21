@@ -91,9 +91,7 @@ const handleEnded = () => {
   const loopVideo = loopVideoRef.value
   if (loopVideo) {
     loopVideo.currentTime = 0
-    void loopVideo.play().catch(() => {
-      // Ignore autoplay rejections; user interaction can resume playback.
-    })
+    void loopVideo.play().catch(() => {})
   }
 
   isIntroFinished.value = true

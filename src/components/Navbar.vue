@@ -5,9 +5,9 @@
     >
       <a
         href="#home"
-        class="font-display text-4xl md:w-38 xl:w-auto leading-none tracking-tight text-white sm:text-black transition-transform duration-300 hover:scale-[1.08]"
+        class="font-display text-4xl md:w-38 xl:w-auto leading-none tracking-tight text-white sm:text-gray-300 lg:text-black transition-transform duration-300 hover:scale-[1.08]"
       >
-        Peluqueria Juan Carlos
+        Peluquería Juan Carlos
         <sup class="align-super text-sm">&reg;</sup>
       </a>
 
@@ -27,7 +27,7 @@
         href="#reach-us"
         class="rounded-full hidden font-medium sm:block bg-foreground px-3 xl:px-6 py-2.5 text-sm text-white transition-transform duration-300 hover:scale-[1.03]"
       >
-        Reserva una cita
+        Reserva tu cita
       </a>
     </div>
   </header>
@@ -36,9 +36,9 @@
 <script setup lang="ts">
 const navItems = [
   { label: 'Inicio', href: '#home', active: false },
-  { label: 'Local', href: '#about', active: false },
-  { label: 'Nosotros', href: '#about', active: false },
+  { label: 'Local', href: '#local', active: false },
   { label: 'Servicios', href: '#services', active: false },
-  { label: 'Contactanos', href: '#reach-us', active: false },
+  { label: 'Nosotros', href: '#about', active: false },
+  { label: 'Contáctanos', href: '#reach-us', active: false },
 ]
 </script>

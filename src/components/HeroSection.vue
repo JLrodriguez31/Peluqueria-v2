@@ -6,7 +6,7 @@
       >
         <em class="text-black not-italic">Más</em>
         allá del estilo, creamos
-        <em class="text-black not-italic">tu esencia.</em>
+        <em class="xl:text-black text-white not-italic">tu esencia.</em>
       </h1>
 
       <p
@@ -18,7 +18,7 @@
         href="#reach-us"
         class="animate-fade-rise-delay-2 mt-12 inline-flex rounded-full bg-white px-6 py-3 md:px-10 md:py-4 text-base font-medium text-black transition-transform duration-300 hover:scale-[1.03]"
       >
-        Reserva una cita
+        Reserva tu cita
       </a>
     </div>
   </section>

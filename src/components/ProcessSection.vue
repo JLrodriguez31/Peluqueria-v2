@@ -5,11 +5,11 @@
         <h2
           class="reveal max-w-3xl font-display text-4xl leading-[1.05] text-white lg:text-5xl sm:text-5xl xl:text-6xl"
         >
-          Nuestro metodo combina
-          <em class="text-muted not-italic">tecnica y estilo.</em>
+          Nuestro método combina
+          <em class="text-muted not-italic">técnica y estilo.</em>
         </h2>
         <p class="reveal reveal-stagger-2 max-w-md text-muted">
-          Cada cita sigue un proceso claro: escuchamos lo que buscas, proponemos tu mejor version y
+          Cada cita sigue un proceso claro: escuchamos lo que buscas, proponemos tu mejor versión y
           cuidamos cada detalle del acabado.
         </p>
       </div>
@@ -40,7 +40,7 @@ const steps = [
     number: 'Fase 01',
     title: 'Escuchamos',
     description:
-      'Analizamos tu tipo de cabello, tus gustos y tu rutina para recomendar el corte o arreglo ideal.',
+      'Analizamos tu tipo de cabello y escuchamos tus preferencias para recomendar el corte o arreglo ideal.',
   },
   {
     number: 'Fase 02',

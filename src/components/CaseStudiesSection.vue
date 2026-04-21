@@ -9,7 +9,7 @@
           <span
             class="reveal inline-flex rounded-full border border-white/20 px-4 py-1.5 text-xs uppercase tracking-[0.24em] text-muted"
           >
-            Trabajo seleccionado
+            Confianza en cada visita
           </span>
           <h2
             class="reveal reveal-stagger-1 mt-6 font-display text-4xl leading-[1.05] sm:text-5xl xl:text-6xl"
@@ -17,12 +17,6 @@
             Descubre cómo transformamos estilos
           </h2>
         </div>
-        <a
-          href="#journal"
-          class="reveal reveal-stagger-2 text-sm uppercase tracking-[0.18em] text-white/50"
-        >
-          Ver todo
-        </a>
       </div>
 
       <div class="grid gap-6 md:grid-cols-2">
@@ -53,13 +47,6 @@
               </p>
               <div class="mt-4 flex items-end justify-between gap-4">
                 <p class="max-w-xs text-sm text-white/60">{{ project.label }}</p>
-                <button
-                  type="button"
-                  class="flex h-12 w-12 items-center justify-center rounded-full bg-white text-foreground"
-                  aria-label="Abrir caso"
-                >
-                  <ArrowUpRight :size="16" />
-                </button>
               </div>
             </div>
           </div>
